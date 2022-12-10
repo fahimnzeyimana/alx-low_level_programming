@@ -9,7 +9,7 @@
 int main(void)
 {
 	int n;
-	int i = 1;
+	int i = 0;
 
 	for (n = 0 ; n < 89 ; n++)
 	{
@@ -23,7 +23,7 @@ int main(void)
 		i++;
 		if (i > 9)
 		{
-			i = 1;
+			i = 0;
 		}
 	}
 	putchar('\n');
