@@ -18,7 +18,7 @@ int main(void)
 		if (n < 99)
 		{
 			putchar(',');
-			putchar(32);
+			putchar(10);
 		}
 		i++;
 		if (i > 9)
