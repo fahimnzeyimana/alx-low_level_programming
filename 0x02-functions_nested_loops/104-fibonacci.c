@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 /**
  * main - main block
  * Description: Find and print the first 98 fib numbers starting with 1 and 2.
