@@ -1,80 +1,44 @@
-#include "main.h"
-
+#include "holberton.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
-
- * argstostr - main entry
-
- * @ac: int input
-
- * @av: double pointer array
-
- * Return: 0
-
+ * argstostr - concatenate all arguments of your program with newline
+ * @ac: argument count
+ * @av: double pointer to array of strings passed to main
+ * Return: Null if fail, else return pointer to new string
  */
 
 char *argstostr(int ac, char **av)
-
 {
-
-	int i, n, r = 0, l = 0;
-
-	char *str;
-
-
+	char *a, *retp;
+	int i, j, total;
 
 	if (ac == 0 || av == NULL)
-
 		return (NULL);
 
-
-
-	for (i = 0; i < ac; i++)
-
+	for (i = 0, total = 0; i < ac; i++)
 	{
-
-		for (n = 0; av[i][n]; n++)
-
-			l++;
-
+		for (j = 0; *(*(av + i) + j) != '\0'; j++, total++)
+			;
+		total++;
 	}
+	total++;
 
-	l += ac;
-
-
-
-	str = malloc(sizeof(char) * l + 1);
-
-	if (str == NULL)
-
+	a = malloc(total * sizeof(char));
+	if (a == NULL)
 		return (NULL);
 
+	retp = a;
 	for (i = 0; i < ac; i++)
-
 	{
-
-	for (n = 0; av[i][n]; n++)
-
-	{
-
-		str[r] = av[i][n];
-
-		r++;
-
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			*a = av[i][j];
+			a++;
+		}
+		*a = '\n';
+		a++;
 	}
 
-	if (str[r] == '\0')
-
-	{
-
-		str[r++] = '\n';
-
-	}
-
-	}
-
-	return (str);
-
+	return (retp);
 }
-
