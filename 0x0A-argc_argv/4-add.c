@@ -1,6 +1,5 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - add 2 positive numbers and print the result
